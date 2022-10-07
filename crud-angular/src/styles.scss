@@ -1,0 +1,14 @@
+@use '@angular/material/theming' as t;
+@include t.mat-core();
+
+
+  $custom-app-primary: t.mat-palette(t.$mat-teal);
+  $custom-app-secondary: t.mat-palette(t.$mat-cyan, A200, A400, 700);
+  $custom-app-warn: t.mat-palette(t.$mat-deep-orange);
+
+  $custom-theme: t.mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-warn);
+
+  @include t.angular-material-theme($custom-theme);
+
+  html, body {height: 100%;}
+  body {margin: 0; font-family: Roboto, “Helvetica Neue”, sans-serif;}
