@@ -1,6 +1,6 @@
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CoursesService } from './../service/courses.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Course } from '../model/course';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,9 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category', 'actions'];
-
+ courses$: Observable<Course[]>;
   constructor(
     private coursesService: CoursesService,
     public dialog: MatDialog,
